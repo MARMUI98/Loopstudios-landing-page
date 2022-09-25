@@ -1,5 +1,5 @@
 # Frontend Mentor - Loopstudios landing page
-[Visit my Livesite](https://quiet-heliotrope-4772bd.netlify.app/)
+[Visit my Live Site](https://quiet-heliotrope-4772bd.netlify.app/)
 ![Design preview for the Loopstudios landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
