@@ -28,6 +28,7 @@
     height: 40px;
     padding: 5px 40px;
     background: var(--White);
+    color: var(--Black);
     letter-spacing: 2.5px;
     border: 1.5px solid #000;
     cursor: pointer;
