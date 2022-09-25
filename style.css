@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --DarkGray: hsl(0, 0%, 55%);
+    --VeryDarkGray: hsl(0, 0%, 41%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alata', sans-serif;
+    /* font-family: 'Josefin Sans', sans-serif; */
+}
+
+header{
+    background: url('./images/desktop/image-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 50px ;
+    
+}
+.padding{
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+ .navbar nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 20px;
+}
+
+ .navbar nav ul li a{
+    text-decoration:  none;
+    color: var(--White);
+    position: relative;
+    
+}
+ .navbar nav ul li a::after{
+    content: '';
+    width: 0px;
+    height: 1px;
+    background-color: #FFFF;
+    border-bottom: 1px solid #FFFFFF;
+    color: var(--White);
+    z-index: 100;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition:  opacity 0.2s ease-out;
+    transition:  width 0.2s ease-out;
+    opacity: 0;
+    
+}
+.navbar nav ul li a:hover::after{
+    width:30px;
+    opacity: 1;
+}
+.navbar i{
+    color: var(--White);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display:none;
+}
+.quote{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 80px;
+    color: var(--White);
+}
+.quotebox{
+    max-width: 700px;
+    border: 2px solid var(--White);
+    padding: 30px;
+    margin-top: 150px;
+}
+
+
+
+/* middle */
+
+.wrap-mid{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.wrap-mid .img-interact{
+    content: url('./images/desktop/image-interactive.jpg');
+    width: 80%;
+    max-width: 750px;
+}
+.wrap-mid article{
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    max-width: 600px;
+    background: var(--White);
+    padding: 60px;
+
+}
+
+.wrap-mid article h2 {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 300;
+    font-size: 3.4vw;
+    text-transform: uppercase;
+}
+
+.wrap-mid article p{
+    color: var(--DarkGray);
+    margin-top: 30px;
+    line-height: 32px;
+}
+
+@media screen and (max-width:900px) {
+    header{
+        background: url('./images/mobile/image-hero.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .padding{
+        padding-left: 30px ;
+        padding-right: 30px;
+    }
+    header .logo{
+        z-index: 200;
+    }
+    .navbar i{
+        display: initial;
+        z-index: 2000;
+    }
+    header .navbar nav{
+        display:none;
+    }
+
+    header .navbar nav.active{
+        display: flex;
+    }
+    header .navbar nav {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        align-items: center;
+        background: var(--Black);
+    
+    }
+    header .navbar nav ul li{
+        display: flex;
+        margin: 0;
+        border: none;
+        padding: 20px;
+        text-transform: uppercase;
+        background: var(--Black);
+    }
+    header .navbar nav ul li a{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 25px;
+        color: var(--White);
+    }
+    .navbar nav ul li a:hover::after{
+        width:100%;
+        opacity: 1;
+    }
+    .quote{
+        font-size: 8vw;
+        line-height: 8vw;
+        align-self: center;
+        padding: 30px 20px;
+    }
+
+    .quotebox{
+        max-width: 100%;
+        margin-top: 30vw;
+    }
+
+    /* middle section */
+    .wrap-mid{
+        flex-direction: column;
+        padding-top: 50px;
+        min-height:auto;
+    
+    }
+    .wrap-mid .img-interact{
+        content: url('./images/mobile/image-interactive.jpg');
+    }
+    .wrap-mid article{
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        margin: 25px;
+        
+    }
+    .wrap-mid article h2{
+        font-size: 8vw;
+        text-align: center;
+    }
+    .wrap-mid article p{
+        font-size: 2.2vw;
+        line-height: 23px;
+        text-align: center;
+    }
+}

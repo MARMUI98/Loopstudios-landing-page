@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --DarkGray: hsl(0, 0%, 55%);
+    --VeryDarkGray: hsl(0, 0%, 41%);
+}
+.wrap-creations{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.wrap-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.wrap-header h1{
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 300;
+    font-size: 3.4vw;
+    text-transform: uppercase;
+}
+
+.wrap-creations .seeAllLink{
+    text-decoration: none;
+    height: 40px;
+    padding: 5px 40px;
+    background: var(--White);
+    letter-spacing: 2.5px;
+    border: 1.5px solid #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.wrap-creations .seeAllLink:visited{
+    color: #000;
+}
+.wrap-creations .seeAllLink:hover{
+    color: var(--White);
+    background: var(--Black);
+}
+.seeAllLink.above{
+    display: initial;
+}
+.seeAllLink.below{
+    display: none;
+}
+.gallery ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px;
+    list-style: none;
+}
+.gallery ul li{
+    position: relative;
+
+}
+.gallery ul li img{
+    width: 100%;
+}
+.gallery ul li .film{
+    position: absolute;
+    z-index: 200;
+    bottom: 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    background: linear-gradient(to bottom,
+     rgba(0,0,0,0) , rgba(0,0,0,0.8) );
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+.gallery ul li .film:hover{
+    background: rgba(255,255,255,0.5);
+   
+}
+.gallery ul li .film:hover p{
+    color: var(--Black);
+}
+.gallery ul li .film p{
+    color: var(--White);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 300;
+}
+
+
+@media screen and (max-width:600px) {
+    
+    .wrap-creations{
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .wrap-header{
+        justify-content: center;
+    }
+    .wrap-header h1{
+        font-size: 8vw;
+    }
+    .gallery ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .gallery ul li .film{
+        background: linear-gradient(to left,
+        rgba(0,0,0,0) , rgba(0,0,0,0.8) );
+    }
+    .gallery ul li .film p{
+        font-size: 6.5vw;  
+    }
+    .seeAllLink.above{
+        display: none;
+    }
+    .seeAllLink.below{
+        display: initial;
+        margin-top: 30px;
+    }
+    .wrap-seeAllLink{
+        margin-top: 30px;
+        text-align: center;
+    }
+}
